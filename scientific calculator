@@ -1,0 +1,64 @@
+import math
+c="y"
+while c=='y' or'Y':
+    ch = int(input("\nWELCOME TO MY PROJECT - 'SCIENTIFIC CALCULATOR'\n\nEnter '1' for Simple calculation(+,-,*,/)"
+                   "\nEnter '2' for Trignometric calculation\nEnter '3' for Square Root "
+                   "\nEnter '4' for Conversion of radian to degree and degree to radian\nEnter: "))
+    if ch==1:
+        cho = (input("Enter 'a' for Addition\nEnter 'b' for Subtraction\nEnter 'c' for Muliplication\nEnter 'd' for Division\nEnter: "))
+        a = float(input('Enter 1st number: '))
+        b = float(input('Enter 2nd number: '))
+        if cho == 'a':
+            print(a + b)
+        elif cho == 'b':
+                print(a - b)
+        elif cho == 'c':
+                print(a * b)
+        elif cho == 'd':
+            if b == 0:
+                print("Can't divide by 0")
+            else:
+                print(a/b)
+        else:
+            print("invalid input")
+    elif ch == 2:
+        choi = input("Enter '1' for Sin()\nEnter '2' for Cos()\nEnter '3' for Tan()\nEnter: ")
+        d = float(input('Enter degree: '))
+        r = 3.14159 / 180 * d
+        if choi == '1':
+            print("{0:.2f}".format(math.sin(r)))
+        elif choi == '2':
+            print("{0:.2f}".format(math.cos(r)))
+        elif choi == '3':
+            print("{0:.2f}".format(math.tan(r)))
+        else:
+            print("invalid input")
+    elif ch == 3:
+        choic = input('Enter "a" for Power\nEnter "b" for Square Root\nEnter:')
+        if choic == 'a':
+            a = int(input('for (a^b)\nEnter a: '))
+            b = int(input('Enter b:'))
+            print(a ** b)
+        elif choic == 'b':
+            c = int(input("Enter number: "))
+            print(c ** (1 / 2))
+        else:
+            print("invalid input")
+    elif ch == 4:
+        coic = input('Enter "1" for conversion of radian to degree\nEnter "2" for conversion of degree to radian\nEnter: ')
+        if coic == '1':
+            d = float(input('Enter degree: '))
+            r = 3.14159 / 180 * d
+            print('radian is :',r)
+        elif coic == '2':
+            ra = float(input('Enter Radian: '))
+            de = (ra*180)/3.14159
+            print('Degree:',de)
+        else:
+            print("invalid input")
+    else:
+        print("invalid input")
+    c = input("To continue Press y: ")
+    if c not in ("y",'Y'):
+        print('CLOSED')
+        break
